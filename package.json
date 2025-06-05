@@ -2,7 +2,8 @@
   "name": "photo-organizer",
   "version": "0.1.0",
   "description": "A TypeScript/Node.js system for analyzing and organizing photo files based on metadata",
-  "main": "dist/index.js",  "scripts": {
+  "main": "dist/index.js",
+  "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
@@ -10,16 +11,24 @@
     "test": "jest",
     "clean": "rimraf dist"
   },
-  "keywords": ["photo", "exif", "metadata", "organizer", "typescript"],
-  "author": "",
-  "license": "MIT",  "dependencies": {
+  "keywords": [
+    "photo",
+    "exif",
+    "metadata",
+    "organizer",
+    "typescript"
+  ],
+  "author": "Scott Obert",
+  "license": "GPL-2.0",
+  "dependencies": {
     "exiftool-vendored": "^25.0.0",
     "sqlite3": "^5.1.6",
     "commander": "^11.1.0",
     "chalk": "^4.1.2",
     "ora": "^5.4.1",
     "fs-extra": "^11.2.0"
-  },"devDependencies": {
+  },
+  "devDependencies": {
     "@types/node": "^20.11.0",
     "@types/fs-extra": "^11.0.4",
     "typescript": "^5.3.0",
