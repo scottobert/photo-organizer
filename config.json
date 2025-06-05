@@ -1,0 +1,74 @@
+{
+  "database": {
+    "path": "./photo-metadata.db",
+    "backupOnStart": false
+  },
+  "extraction": {
+    "batchSize": 100,
+    "maxConcurrent": 4,
+    "skipHidden": true,
+    "supportedExtensions": [
+      ".jpg",
+      ".jpeg",
+      ".jpe",
+      ".jfif",
+      ".cr2",
+      ".cr3",
+      ".nef",
+      ".nrw",
+      ".arw",
+      ".srf",
+      ".sr2",
+      ".orf",
+      ".rw2",
+      ".pef",
+      ".ptx",
+      ".raf",
+      ".3fr",
+      ".dcr",
+      ".mrw",
+      ".erf",
+      ".mef",
+      ".mos",
+      ".x3f",
+      ".dng",
+      ".psd",
+      ".psb",
+      ".tiff",
+      ".tif",
+      ".png",
+      ".webp",
+      ".bmp",
+      ".gif",
+      ".ico",
+      ".jp2",
+      ".jpx",
+      ".heic",
+      ".heif",
+      ".mov",
+      ".mp4",
+      ".avi",
+      ".mkv",
+      ".mts",
+      ".m2ts"
+    ],
+    "extractThumbnails": false
+  },
+  "organization": {
+    "defaultPattern": "{Year}/{YYYY-MM-DD}/{filename}{extension}",
+    "createYearFolders": true,
+    "preserveOriginalStructure": false,
+    "handleDuplicates": "skip",
+    "maxFilenameLength": 255
+  },
+  "logging": {
+    "level": "info",
+    "file": "./photo-organizer.log",
+    "console": true
+  },
+  "performance": {
+    "enableCaching": true,
+    "cacheSize": 1000,
+    "memoryLimit": "512MB"
+  }
+}

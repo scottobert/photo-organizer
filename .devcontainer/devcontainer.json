@@ -1,0 +1,70 @@
+{
+  "name": "Photo Organizer Development",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "ms-vscode.vscode-eslint",
+        "ms-vscode.vscode-json",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "ms-vscode.test-adapter-converter",
+        "hbenl.vscode-test-explorer",
+        "orta.vscode-jest",
+        "ms-vscode.vscode-github-pullrequest",
+        "ms-vscode.powershell",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {
+        "typescript.preferences.quoteStyle": "single",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        },
+        "files.associations": {
+          "*.json": "jsonc"
+        },
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+    "postCreateCommand": [
+    "bash",
+    "/workspaces/photo-org/.devcontainer/setup.sh"
+  ],
+  
+  "forwardPorts": [3000, 8080],
+  
+  "portsAttributes": {
+    "3000": {
+      "label": "Development Server",
+      "onAutoForward": "notify"
+    },
+    "8080": {
+      "label": "Preview Server", 
+      "onAutoForward": "notify"
+    }
+  },
+  
+  "remoteUser": "node",
+  
+  "mounts": [
+    "source=${localWorkspaceFolder}/example-photos,target=/workspaces/photo-org/example-photos,type=bind,consistency=cached"
+  ],
+  
+  "containerEnv": {
+    "NODE_ENV": "development",
+    "TERM": "xterm-256color"
+  },
+  
+  "workspaceFolder": "/workspaces/photo-org"
+}

@@ -1,0 +1,54 @@
+{
+  "name": "Photo Organizer (Docker Compose)",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "photo-organizer-dev",
+  "workspaceFolder": "/workspaces/photo-org",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "ms-vscode.vscode-eslint",
+        "ms-vscode.vscode-json",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "ms-vscode.test-adapter-converter",
+        "hbenl.vscode-test-explorer",
+        "orta.vscode-jest",
+        "ms-vscode.vscode-github-pullrequest",
+        "ms-vscode.powershell",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  },
+  
+  "postCreateCommand": [
+    "bash",
+    "/workspaces/photo-org/.devcontainer/setup.sh"
+  ],
+  
+  "forwardPorts": [3000, 8080],
+  
+  "portsAttributes": {
+    "3000": {
+      "label": "Development Server",
+      "onAutoForward": "notify"
+    },
+    "8080": {
+      "label": "Preview Server", 
+      "onAutoForward": "notify"
+    }
+  },
+  
+  "containerEnv": {
+    "NODE_ENV": "development",
+    "TERM": "xterm-256color"
+  },
+  
+  "remoteUser": "node"
+}

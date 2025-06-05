@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    "ms-vscode.vscode-typescript-next",
+    "ms-vscode.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "orta.vscode-jest",
+    "ms-vscode.test-adapter-converter",
+    "hbenl.vscode-test-explorer",
+    "ms-vscode.vscode-json",
+    "streetsidesoftware.code-spell-checker",
+    "ms-vscode.vscode-github-pullrequest",
+    "github.copilot",
+    "ms-vscode.powershell",
+    "bradlc.vscode-tailwindcss",
+    "formulahendry.terminal",
+    "christian-kohler.path-intellisense",
+    "ms-vscode.vscode-github-pullrequest",
+    "redhat.vscode-yaml"
+  ],
+  "unwantedRecommendations": []
+}

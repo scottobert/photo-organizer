@@ -1,0 +1,127 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm: build",
+      "type": "npm",
+      "script": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": "$tsc"
+    },
+    {
+      "label": "npm: test",
+      "type": "npm",
+      "script": "test",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "npm: dev",
+      "type": "npm",
+      "script": "dev",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "CLI: Analyze Example Photos",
+      "type": "shell",
+      "command": "node",
+      "args": ["dist/index.js", "analyze", "example-photos"],
+      "group": "build",
+      "dependsOn": "npm: build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "CLI: Show Stats",
+      "type": "shell",
+      "command": "node",
+      "args": ["dist/index.js", "stats"],
+      "group": "build",
+      "dependsOn": "npm: build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "CLI: Find Duplicates",
+      "type": "shell",
+      "command": "node",
+      "args": ["dist/index.js", "duplicates"],
+      "group": "build",
+      "dependsOn": "npm: build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean and Rebuild",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "clean"],
+      "group": "build",
+      "dependsOrder": "sequence",
+      "dependsOn": ["npm: build"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Setup Test Environment",
+      "type": "shell",
+      "command": "mkdir",
+      "args": ["-p", "test-output", "example-photos"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

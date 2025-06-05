@@ -1,0 +1,77 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug CLI - Analyze",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/dist/index.js",
+      "args": ["analyze", "${workspaceFolder}/example-photos"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "preLaunchTask": "npm: build",
+      "sourceMaps": true,
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+    },
+    {
+      "name": "Debug CLI - Help",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/dist/index.js",
+      "args": ["--help"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "preLaunchTask": "npm: build",
+      "sourceMaps": true,
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+    },
+    {
+      "name": "Debug CLI - Duplicates",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/dist/index.js",
+      "args": ["duplicates"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "preLaunchTask": "npm: build",
+      "sourceMaps": true,
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+    },
+    {
+      "name": "Debug CLI - Stats",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/dist/index.js",
+      "args": ["stats"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "preLaunchTask": "npm: build",
+      "sourceMaps": true,
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+    },
+    {
+      "name": "Debug CLI - Organize (Dry Run)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/dist/index.js",
+      "args": ["organize", "{year}/{month}-{day}", "--source", "directory", "--path", "${workspaceFolder}/example-photos", "--output", "${workspaceFolder}/test-output", "--dry-run"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "preLaunchTask": "npm: build",
+      "sourceMaps": true,
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+    },
+    {
+      "name": "Debug TypeScript (ts-node)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/ts-node",
+      "args": ["${workspaceFolder}/src/index.ts", "--help"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "env": {
+        "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json"
+      }
+    }
+  ]
+}

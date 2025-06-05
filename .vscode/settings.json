@@ -1,0 +1,45 @@
+{
+  "typescript.preferences.quoteStyle": "single",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.rulers": [80, 120],
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "jest.runMode": "watch",
+  "jest.testExplorer.enabled": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/*.db": true,
+    "**/test-*": true,
+    "**/.git": true
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": false,
+    "**/*.db": false
+  },
+  "emmet.includeLanguages": {
+    "typescript": "javascript"
+  },
+  "debug.console.fontSize": 14,
+  "editor.fontSize": 14,
+  "terminal.integrated.fontSize": 14,
+  "workbench.colorTheme": "Default Dark+",
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "extensions.ignoreRecommendations": false,
+  "problems.decorations.enabled": true
+}
